@@ -1,0 +1,2 @@
+students = []
+studentFile = 'students.txt'
