@@ -1,0 +1,22 @@
+192.168.203.0/24
+Remote-2(32 host) 64 méretű 192.168.203.0- .63/26
+64=2^6 -> 32-6 -> /26 ->255.255.255.192
+Hq-2(21 host) 32 méretű 192.168.203.64/27
+                        255.255.255.224
+Remote-1(19 host) 32 méretű
+HQ-1(14 host)32 méretű
+HQ-remote(2 host) 4 méretű
+Router config:
+enable
+configure terminal
+interfacre gigabitethernet 0/0
+ip address 192.168.203.1 255.255.255.192
+no shutdown
+
+switch config:
+enable
+configure terminal
+interface vlan 1
+ip address 192.168.203.2 255.255.255.192
+no shutdown
+ip default-gateway 192.168.203.1

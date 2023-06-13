@@ -1,0 +1,33 @@
+enable
+config terminal
+hostname ...
+banner motd #...#
+in gig0/0 -> description
+enable password ...
+service password-encryption
+enable secret ...
+show running-config  (RAM)
+copy running-config startup-config -> write (w) (NVRAM, flash)
+copy running-config tftp
+copy tftp running-config
+do 
+show ip route
+
+Telnet kapcsolódás
+line vty 0
+password ...
+login
+
+vagy 
+username ... privilege ... secret ...
+line vty 0
+login local
+
+
+konzol bejelentkezés:
+line console 0
+password ...
+login vagy login local
+
+
+SSH kapcsolódás
